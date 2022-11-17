@@ -1,4 +1,4 @@
-package org.chatbot;
+package org.chatbot.servises;
 
 import org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;

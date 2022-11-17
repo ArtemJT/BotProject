@@ -1,4 +1,4 @@
-package org.chatbot;
+package org.chatbot.servises;
 
 @Deprecated
 public class NonCommand {

@@ -1,4 +1,4 @@
-package org.chatbot;
+package org.chatbot.servises;
 
 import java.io.IOException;
 import java.util.*;
