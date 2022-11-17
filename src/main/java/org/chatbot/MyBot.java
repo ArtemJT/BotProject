@@ -7,7 +7,7 @@ public class MyBot {
 
     private static Map<String, String> blackouts;
 
-    public static void main(String[] args) {
+//    public static void main(String[] args) {
 //        Scanner scanner = new Scanner(System.in);
 //        String message = scanner.nextLine();
 //
@@ -15,7 +15,7 @@ public class MyBot {
 //
 //        String botAnswer = process(message);
 //        System.out.println(botAnswer);
-    }
+//    }
 
     public static String process(String message) {
         if (message.equalsIgnoreCase("q")) {
