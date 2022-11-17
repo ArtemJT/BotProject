@@ -139,6 +139,27 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
+
+        <plugin>
+          <groupId>
+            ore.codehaus.mojo
+          </groupId>
+          <artifactId>appassembler-maven-plugin</artifactId>
+          <version>1.1.1</version>
+          <configuration>
+            <assembleDeirectory>
+              target
+            </assembleDeirectory>
+            <programs>
+              <program>
+                <mainClass>org.chatbot.App</mainClass>
+                <name>chatBot</name>
+              </program>
+            </programs>
+          </configuration>
+        </plugin>
+
+
       </plugins>
     </pluginManagement>
   </build>
