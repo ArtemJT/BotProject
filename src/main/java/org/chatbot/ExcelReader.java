@@ -69,7 +69,7 @@ public class ExcelReader {
 
     public void read(String filename) throws IOException {
         Workbook workbook = loadWorkbook(filename);
-        var sheetIterator = workbook.sheetIterator();
+        Iterator<Sheet> sheetIterator = workbook.sheetIterator();
         while (sheetIterator.hasNext()) {
             Sheet sheet = sheetIterator.next();
             processSheet(sheet);
@@ -77,8 +77,8 @@ public class ExcelReader {
     }
 
     private Workbook loadWorkbook(String filename) throws IOException {
-        var extension = filename.substring(filename.lastIndexOf(".") + 1).toLowerCase();
-        try (var file = new FileInputStream(filename)) {
+        String extension = filename.substring(filename.lastIndexOf(".") + 1).toLowerCase();
+        try (FileInputStream file = new FileInputStream(filename)) {
             if (extension.equals("xls")) {
                 return new HSSFWorkbook(file);
             } else {
@@ -98,16 +98,16 @@ public class ExcelReader {
     }
 
     private void processSheet(Sheet sheet) {
-        var iterator = sheet.rowIterator();
-        for (var rowIndex = 2; iterator.hasNext(); rowIndex++) {
-            var row = iterator.next();
+        Iterator<Row> iterator = sheet.rowIterator();
+        for (int rowIndex = 2; iterator.hasNext(); rowIndex++) {
+            Row row = iterator.next();
             processRow(rowIndex, row);
         }
     }
 
     private void processRow(int rowIndex, Row row) {
         ExcelReader.xlsData.put(rowIndex, new ArrayList<>());
-        for (var cell : row) {
+        for (Cell cell : row) {
             processCell(cell, ExcelReader.xlsData.get(rowIndex));
         }
     }
